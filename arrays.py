@@ -145,6 +145,14 @@ Find duplicate elements in a list.'''
 #     if i==0:
 #         list.append(i)
 # print(list)
+# l1 = [10, 20, 0,0,0 ,40, 30]
+# point=0
+# for i in range(len(l1)):
+#     if l1[i]!=0:
+#         l1[i],l1[point]=l1[point],l1[i]
+#         point+=1
+# print(l1)
+               
 '''missing number'''
 # list=[1,3,4,5,6]
 # n=len(list)+1
@@ -404,19 +412,13 @@ Find duplicate elements in a list.'''
 # print(num)
 '''Find the minimum subarray sum'''
 # nums = [3, -4, 2, -3, -1, 7]
-
 # min_sub = float("inf")
-
 # n = len(nums)
-
 # for i in range(n):
 #     total = 0
-
 #     for j in range(i, n):
 #         total = total + nums[j]
-
 #         min_sub = min(min_sub, total)
-
 # print(min_sub)
 '''Find the Majority Element/elements taht appreaing more tahn n/2'''
 # nums = [2, 2, 1, 1, 1, 2, 2]
@@ -439,10 +441,119 @@ Find duplicate elements in a list.'''
 # for num in nums:
 #     min_element = min(min_element, num)
 #     max_diff = max(max_diff, num - min_element)
-
 # print(max_diff)
-'''common elemnts'''
-arr1=[1,2,3,4]
-arr2=[1,2,56,]
-if arr1[i] in arr2:
-    print(arr1[i])
+# '''find longest subarray sum'''
+# arr= [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+# longest=0
+# total=0
+# n=len(arr)
+# for i in range(n):
+#     total+=arr[i]
+#     longest=max(longest,total)
+#     if total<0:
+#         total=0
+# print(longest)
+# '''find smallest sub array sum'''
+# arr=[3, -4, 2, -3, -1, 7, -5]
+# small=0
+# total=0
+# n=len(arr)
+# for i in range(n):
+#     total+=arr[i]
+#     small=min(small,total)
+#     if total>0:
+#         total=0
+# print(small) 
+
+# '''sub array with given sum'''
+# arr=[1,2,3,7,5]
+# target=3
+# # count=0
+# left=0
+# total=0
+# for right in range(len(arr)):
+#     total+=arr[right]
+#     while total>target:
+#         total-=arr[left]
+#         left+=1
+#     if total==target:
+#         print(arr[left:right+1])
+#         break
+#         # count+=1
+# # print(count)
+# '''longest sub array with sum k '''
+# arr = [10, 5, 2, 7, 1, 9]
+# k = 15
+# freq = {}
+# total = 0
+# longest = 0
+# for i in range(len(arr)):
+#     total += arr[i]
+#     if total == k:
+#         longest = i + 1
+#     if total - k in freq:
+#         length = i - freq[total - k]
+#         longest = max(longest, length)
+#     if total not in freq:
+#         freq[total] = i
+# print(longest)
+# '''Find the Maximum-Length Subarray Containing Only Positive Numbers'''
+# arr = [1, 2, 3, -1, 4, 5, 6, 7, -2, 8]
+# current = []
+# max_subarray = []
+# for num in arr:
+#     if num > 0:
+#         current.append(num)
+#         if len(current) > len(max_subarray):
+#             max_subarray = max(max_subarray,current)
+#     else:
+#         current = []
+# print("Maximum length:", len(max_subarray))
+# print("Subarray:", max_subarray)
+# '''Find the maximum difference between two elements'''
+# arr = [7, 1, 5, 3, 6, 4]
+
+# minimum = arr[0]
+# maximum = arr[0]
+# for num in arr:
+#     minimum = min(minimum, num)
+#     maximum = max(maximum, num)
+# print(maximum - minimum)
+# '''move positives and negitives alternatly'''
+# nums = [1, 2, -3, -4, 5, -6]
+# positive = []
+# negative = []
+# for x in nums:
+#     if x >= 0:
+#         positive.append(x)
+#     else:
+#         negative.append(x)
+# result = []
+# for i in range(max(len(positive), len(negative))):
+#     if i < len(positive):
+#         result.append(positive[i])
+#     if i < len(negative):
+#         result.append(negative[i])
+# print(result)
+
+'''merge two sorted arays uisng two pointers'''
+a = [1, 3, 5, 7]
+b = [2, 4, 6, 8]
+i = 0
+j = 0
+res = []
+while i < len(a) and j < len(b):
+    if a[i] < b[j]:
+        res.append(a[i])
+        i += 1
+    else:
+        res.append(b[j])
+        j += 1
+while i < len(a):
+    res.append(a[i])
+    i += 1
+while j < len(b):
+    res.append(b[j])
+    j += 1
+print(res) 
+# print without list and commas use print(*res)

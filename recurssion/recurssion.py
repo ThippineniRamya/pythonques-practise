@@ -57,4 +57,25 @@
 #     sum+=i
 # print(sum)
 
-'''even number suisng recursisio'''
+# '''even number suisng recursisio'''''
+
+'''fibnocci using recursion'''
+# def fib(n):
+#     if n<=1:
+#         return n
+#     return fib(n-1)+fib(n-2)
+# n=int(input("enter number"))
+# res=[]
+# for i in range(n):
+#     res.append(fib(i))
+#     # print(fib(i),end=" ")
+# print(res)
+
+# lis=[12,3,4,5,6,1,7]
+# target=10
+# res=[]
+# for i in range(len(lis)):
+#     for j in range(i+1,len(lis)):
+#         if lis[i]+lis[j]==target:
+#             res.append((lis[i],lis[j]))
+# print(res)
